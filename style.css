@@ -150,3 +150,112 @@ main {
 .project h3 {
   color: var(--primary-color);
   margin-top: 0;
+}
+
+.project p,
+.project li {
+  font-size: 1rem;
+}
+
+.project a {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+.project a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+iframe {
+  border: none;
+  border-radius: 8px;
+  margin: 20px 0;
+  width: 100%;
+}
+
+/* ------------------------------
+   Coming Soon
+------------------------------ */
+.coming-soon {
+  text-align: center;
+  padding: 30px;
+  border-radius: 12px;
+  background: var(--card-bg);
+  box-shadow: 0 3px 8px var(--shadow-color);
+  font-style: italic;
+  color: #555;
+}
+
+/* ------------------------------
+   Footer
+------------------------------ */
+footer {
+  text-align: center;
+  padding: 20px 10px;
+  color: #777;
+  font-size: 0.9rem;
+  border-top: 1px solid #ccc;
+}
+
+/* ------------------------------
+   Dark Mode
+------------------------------ */
+body.dark-mode {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+body.dark-mode header {
+  background: linear-gradient(135deg, #222831, #30475e);
+}
+
+body.dark-mode nav a::after {
+  background: var(--primary-dark);
+}
+
+body.dark-mode .project,
+body.dark-mode .coming-soon {
+  background: var(--card-dark);
+  box-shadow: 0 4px 10px var(--shadow-dark);
+}
+
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: var(--primary-dark);
+}
+
+body.dark-mode a {
+  color: var(--primary-dark);
+}
+
+body.dark-mode footer {
+  color: #bbb;
+  border-top-color: #444;
+}
+
+/* ------------------------------
+   Responsive Design
+------------------------------ */
+@media (max-width: 768px) {
+  nav a {
+    display: inline-block;
+    margin: 10px 10px;
+  }
+
+  main {
+    margin: 20px auto;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  #theme-toggle {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}
