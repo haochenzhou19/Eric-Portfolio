@@ -4,59 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Haochen Zhou | Portfolio</title>
-  <style>
-    /* General page styling */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f5f5f5;
-      color: #333;
-      text-align: center;
-    }
-
-    /* Navigation bar styling */
-    nav {
-      background-color: #e6e6e6; /* light gray bar */
-      padding: 15px 0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #0056b3;
-      font-weight: bold;
-      margin: 0 15px;
-      transition: color 0.2s ease;
-    }
-
-    nav a:hover {
-      color: #003d80; /* darker blue on hover */
-    }
-
-    /* Page content styling */
-    h1 {
-      color: #0056b3;
-      margin-top: 40px;
-    }
-
-    p {
-      max-width: 600px;
-      margin: 20px auto;
-      line-height: 1.6;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Portfolio of Haochen (Eric) Zhou — Economics graduate specializing in data analytics and supply chain optimization.">
+  <meta name="keywords" content="Haochen Zhou, Eric Zhou, Portfolio, Data Analytics, Supply Chain, Economics">
+  <meta name="author" content="Haochen Zhou">
 </head>
 <body>
   <nav>
-  <a href="index.html">Home</a>
-  <a href="About.html">About Me</a>
-  <a href="Projects.html">Projects</a>
-  <a href="Contact.html">Contact</a>
+    <button class="menu-toggle">☰</button>
+    <a href="index.html">Home</a>
+    <a href="About.html">About Me</a>
+    <a href="Projects.html">Projects</a>
+    <a href="Contact.html">Contact</a>
   </nav>
 
+  <main>
+    <section class="hero">
+      <h1>Haochen (Eric) Zhou</h1>
+      <p>Economics Graduate | Data-Driven Problem Solver | Supply Chain Specialist</p>
+      <a href="Projects.html" class="btn">View Projects</a>
+      <a href="Resume.pdf" download class="btn">📄 Download Resume</a>
+    </section>
+  </main>
 
+  <footer>
+    <p>© 2025 Haochen Zhou</p>
+  </footer>
 
-  <h1>Welcome to My Portfolio</h1>
-  <p>Hello, I’m Haochen Zhou — an economics graduate and aspiring data analyst. This site will showcase my projects, skills, and contact information.</p>
+  <script src="script.js"></script>
 </body>
 </html>
+
