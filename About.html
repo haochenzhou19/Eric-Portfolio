@@ -4,9 +4,88 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Me | Haochen Zhou</title>
-  <meta name="description" content="Learn more about Haochen Zhou — data analyst with experience in healthcare supply chain and economics.">
+  <meta name="description" content="Learn more about Haochen Zhou — economics graduate and supply chain specialist with growing expertise in data analytics.">
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* === Smooth Scrolling === */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* === Responsive Layout === */
+    .about-section {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 2rem;
+      line-height: 1.7;
+      font-size: 1.1rem;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .intro {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--accent-color, #0077cc);
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #005fa3;
+      transform: translateY(-2px);
+    }
+
+    /* === Fade-in Animation === */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* === Responsive Adjustments === */
+    @media (max-width: 768px) {
+      .about-section {
+        padding: 2rem 1rem;
+        font-size: 1rem;
+      }
+
+      .section-title {
+        font-size: 1.6rem;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      nav a {
+        font-size: 0.95rem;
+        padding: 0.5rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <header>
     <h1>About Me</h1>
@@ -20,18 +99,31 @@
   </header>
 
   <main>
-    <section class="project">
-      <h2>Hi, I’m Haochen (Eric) Zhou</h2>
-      <p>
-        I’m an <strong>Economics graduate</strong> and <strong>Supply Chain Specialist</strong> at Trinity Health, where I help manage and forecast medical inventory across hospital departments, improving efficiency and supporting clinical operations.
-      </p>
-      <p>
-        While my current role isn’t focused on analytics yet, it involves many data-driven aspects — from spotting usage trends to optimizing workflows. After earning the <strong>Google Data Analytics Certificate</strong>, I’ve been building skills in SQL, visualization, and analytical problem-solving to apply in future roles.
-      </p>
-      <p>
-        My background in <strong>economics and history</strong> strengthened my ability to think critically, communicate clearly, and evaluate complex decisions — skills I now bring to operational and analytical challenges.
-      </p>
-      <a href="Resume.pdf" class="btn" download>📄 Download My Resume</a>
+    <section id="about" class="section about-section">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+
+        <p class="intro">
+          <strong>Hi, I’m Haochen (Eric) Zhou</strong><br>
+          I’m an <strong>Economics graduate</strong> and <strong>Supply Chain Specialist</strong> at Trinity Health, where I coordinate and forecast medical inventory across multiple hospital departments.
+        </p>
+
+        <p>
+          My work centers on improving operational efficiency in healthcare — streamlining inventory visibility, minimizing waste, and supporting patient care through reliable supply flow.
+        </p>
+
+        <p>
+          While my current role isn’t purely analytical, I’ve recently completed the 
+          <strong>Google Data Analytics Certificate</strong>, which strengthened my ability to draw insights from data and apply them to real-world decision-making.
+        </p>
+
+        <p>
+          My economics background sharpened my understanding of trade-offs and data interpretation, while my history minor built my communication and critical thinking skills. 
+          I aspire to combine these strengths to bring data-driven improvements to business and supply chain operations.
+        </p>
+
+        <a href="Resume.pdf" class="btn" download>📄 Download My Resume</a>
+      </div>
     </section>
   </main>
 

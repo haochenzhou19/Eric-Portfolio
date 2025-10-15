@@ -1,7 +1,9 @@
 /* ------------------------------
    Global Styles
 ------------------------------ */
-
+html {
+  scroll-behavior: smooth;
+}
 :root {
   /* Light mode palette */
   --bg-color: #f8f9fc;
@@ -257,5 +259,36 @@ body.dark-mode footer {
     width: 35px;
     height: 35px;
     font-size: 1rem;
+  }
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  section {
+    width: 100%;
+  }
+
+  h1, h2, h3 {
+    text-align: center;
+  }
+
+  .btn {
+    display: block;
+    margin: 1rem auto;
   }
 }
