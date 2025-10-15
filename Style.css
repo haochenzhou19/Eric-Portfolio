@@ -1,111 +1,261 @@
-:root {
-  --bg: #f4f8ff;
-  --text: #222;
-  --accent: #0059b3;
-  --card-bg: #ffffffcc;
-  --header-bg: linear-gradient(90deg, #003366, #0059b3);
-}
+/* ------------------------------
+   Global Styles
+------------------------------ */
 
-body.dark {
-  --bg: #0d1117;
-  --text: #e6edf3;
-  --accent: #58a6ff;
-  --card-bg: #161b22;
-  --header-bg: linear-gradient(90deg, #0a0f1a, #1a2b4c);
+:root {
+  /* Light mode palette */
+  --bg-color: #f8f9fc;
+  --text-color: #333;
+  --primary-color: #0056b3;
+  --secondary-color: #ffffff;
+  --accent-color: #008cff;
+  --card-bg: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+
+  /* Dark mode palette */
+  --bg-dark: #1a1c1f;
+  --text-dark: #e4e6eb;
+  --primary-dark: #4da3ff;
+  --card-dark: #24262a;
+  --shadow-dark: rgba(0, 0, 0, 0.6);
+
+  /* Transitions */
+  --transition-speed: 0.3s;
 }
 
 body {
-  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  transition: background 0.4s, color 0.4s;
+  padding: 0;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background var(--transition-speed), color var(--transition-speed);
+  line-height: 1.7;
 }
 
-/* Header */
+/* ------------------------------
+   Header & Navigation
+------------------------------ */
 header {
-  background: var(--header-bg);
-  color: #fff;
-  padding: 30px 0 15px 0;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
   text-align: center;
+  padding: 20px 0 30px 0;
+  box-shadow: 0 4px 10px var(--shadow-color);
   position: relative;
 }
 
-header h1 { margin: 0; font-size: 2.4em; }
-header p { color: #cce0ff; }
-
-/* Nav */
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: 500;
-  transition: color 0.3s;
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  font-weight: 600;
 }
-nav a:hover { color: #ffeb3b; }
 
-/* Theme Toggle Button */
+nav {
+  margin-top: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  margin: 0 15px;
+  font-size: 1rem;
+  position: relative;
+  transition: color var(--transition-speed);
+}
+
+nav a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: white;
+  transition: width var(--transition-speed);
+  margin: 0 auto;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: #e6e6e6;
+}
+
+/* Theme toggle button */
 #theme-toggle {
   position: absolute;
-  right: 25px;
-  top: 25px;
-  background: none;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 1.2em;
-  cursor: pointer;
-  padding: 5px 9px;
-  transition: background 0.3s, transform 0.2s;
-}
-#theme-toggle:hover {
+  right: 20px;
+  top: 20px;
   background: rgba(255, 255, 255, 0.15);
-  transform: scale(1.1);
-}
-
-/* Content */
-main {
-  padding: 40px 10%;
-}
-
-section {
-  background: var(--card-bg);
-  border-radius: 10px;
-  padding: 25px;
-  margin-bottom: 25px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  background: var(--accent);
+  border: none;
+  border-radius: 50%;
   color: white;
-  padding: 10px 18px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s, transform 0.2s;
-}
-.btn:hover {
-  background: #004080;
-  transform: translateY(-2px);
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: background var(--transition-speed);
 }
 
-/* Footer */
+#theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ------------------------------
+   Main Content
+------------------------------ */
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.intro h2 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.intro .subtitle {
+  color: #666;
+  font-style: italic;
+}
+
+/* ------------------------------
+   Project Cards
+------------------------------ */
+.project {
+  background: var(--card-bg);
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 10px var(--shadow-color);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px var(--shadow-color);
+}
+
+.project h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+}
+
+.project p,
+.project li {
+  font-size: 1rem;
+}
+
+.project a {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+.project a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+iframe {
+  border: none;
+  border-radius: 8px;
+  margin: 20px 0;
+  width: 100%;
+}
+
+/* ------------------------------
+   Coming Soon
+------------------------------ */
+.coming-soon {
+  text-align: center;
+  padding: 30px;
+  border-radius: 12px;
+  background: var(--card-bg);
+  box-shadow: 0 3px 8px var(--shadow-color);
+  font-style: italic;
+  color: #555;
+}
+
+/* ------------------------------
+   Footer
+------------------------------ */
 footer {
   text-align: center;
-  background: var(--header-bg);
-  color: white;
-  padding: 20px 0;
-  margin-top: 40px;
-  font-size: 0.9em;
+  padding: 20px 10px;
+  color: #777;
+  font-size: 0.9rem;
+  border-top: 1px solid #ccc;
 }
 
-/* Responsive */
+/* ------------------------------
+   Dark Mode
+------------------------------ */
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+body.dark header {
+  background: linear-gradient(135deg, #222831, #30475e);
+}
+
+body.dark nav a::after {
+  background: var(--primary-dark);
+}
+
+body.dark .project,
+body.dark .coming-soon {
+  background: var(--card-dark);
+  box-shadow: 0 4px 10px var(--shadow-dark);
+}
+
+body.dark h2,
+body.dark h3 {
+  color: var(--primary-dark);
+}
+
+body.dark a {
+  color: var(--primary-dark);
+}
+
+body.dark footer {
+  color: #bbb;
+  border-top-color: #444;
+}
+
+/* ------------------------------
+   Responsive Design
+------------------------------ */
 @media (max-width: 768px) {
-  main { padding: 30px 5%; }
-  header h1 { font-size: 2em; }
-  #theme-toggle { right: 15px; top: 15px; }
+  nav a {
+    display: inline-block;
+    margin: 10px 10px;
+  }
+
+  main {
+    margin: 20px auto;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  #theme-toggle {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
 }
