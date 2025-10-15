@@ -1,30 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Active nav link
+  // highlight active nav link
   const current = window.location.pathname.split("/").pop() || "index.html";
   document.querySelectorAll(".nav a").forEach(a => {
     if (a.getAttribute("href") === current) a.classList.add("active");
   });
 
-  // Mobile nav toggle
-  const hamburger = document.querySelector(".hamburger");
+  // hamburger toggle
+  const hb = document.querySelector(".hamburger");
   const nav = document.querySelector(".nav");
-  if (hamburger && nav) {
-    hamburger.addEventListener("click", () => {
-      nav.classList.toggle("show");
-    });
+  if (hb && nav) {
+    hb.addEventListener("click", () => nav.classList.toggle("show"));
   }
 
-  // Theme toggle (small invert effect) - optional UI element exists if you add it
-  const themeBtn = document.querySelector("#theme-toggle");
-  if (themeBtn) {
-    themeBtn.addEventListener("click", () => {
-      document.documentElement.classList.toggle("theme-invert");
-      const on = document.documentElement.classList.contains("theme-invert");
-      localStorage.setItem("themeInvert", on ? "1" : "0");
+  // simple intersection observer for fade-up elements
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add("in-view");
+        io.unobserve(e.target);
+      }
     });
-    // initialize
-    if (localStorage.getItem("themeInvert") === "1") {
-      document.documentElement.classList.add("theme-invert");
-    }
-  }
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll(".fade-up").forEach(el => io.observe(el));
 });
