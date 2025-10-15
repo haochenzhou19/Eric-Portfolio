@@ -1,44 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects | Haochen Zhou</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Haochen (Eric) Zhou</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav>
-    <button class="menu-toggle">☰</button>
-    <a href="index.html">Home</a>
-    <a href="About.html">About Me</a>
-    <a href="Projects.html">Projects</a>
-    <a href="Contact.html">Contact</a>
-  </nav>
+  <div class="container">
+    <header class="header">
+      <a class="brand" href="index.html">
+        <div class="logo">EZ</div>
+        <div>
+          <div style="font-weight:700;">Haochen (Eric) Zhou</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:4px;">Projects & analysis</div>
+        </div>
+      </a>
 
-  <main>
-    <h1>Projects</h1>
-    <section>
-      <h2>Cyclistic Bike-Share Analysis</h2>
-      <p><em>Google Data Analytics Capstone Project</em></p>
-      <p>This project analyzed bike-share data to identify user behavior patterns and support data-driven marketing decisions.</p>
-      <iframe src="https://docs.google.com/presentation/d/1N-PgkEUXJUy144aJyUKWnXjBmIU0kSdypMWbHpo5qxE/embed" width="700" height="400"></iframe>
-      <p><a href="https://docs.google.com/presentation/d/1N-PgkEUXJUy144aJyUKWnXjBmIU0kSdypMWbHpo5qxE/edit?usp=sharing" target="_blank" rel="noopener">View Full Presentation</a></p>
-      <hr>
-      <iframe src="https://docs.google.com/document/d/1c7qoHJpPV5zeJnqFh9gyebTEub26KgoznufbcCczLsg/preview" width="700" height="500"></iframe>
-      <p><a href="https://docs.google.com/document/d/1c7qoHJpPV5zeJnqFh9gyebTEub26KgoznufbcCczLsg/edit?usp=sharing" target="_blank" rel="noopener">View Full Documentation</a></p>
-    </section>
+      <button class="hamburger" aria-label="Toggle navigation">☰</button>
 
-    <section>
-      <h2>More Projects Coming Soon</h2>
-      <p>Future projects will explore deeper applications of R, SQL, and Excel for solving real-world business challenges.</p>
-    </section>
-  </main>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Projects.html">Projects</a>
+        <a href="Contact.html">Contact</a>
+      </nav>
+    </header>
 
-  <footer>
-    <p>© 2025 Haochen Zhou</p>
-  </footer>
+    <main class="card">
+      <h1>Featured Project</h1>
+      <p class="kicker">Cyclistic Bike-Share Analysis — Capstone Project</p>
+
+      <div class="project-list">
+        <div class="project-item">
+          <h3>Cyclistic Bike-Share Analysis</h3>
+          <p>Explored usage differences between casual and annual riders to recommend membership-conversion strategies. Cleaned and analyzed ride data, then presented findings to highlight weekday vs weekend behavior and duration patterns.</p>
+
+          <div class="embed">
+            <iframe src="https://docs.google.com/presentation/d/1N-PgkEUXJUy144aJyUKWnXjBmIU0kSdypMWbHpo5qxE/embed?start=false&loop=false" width="100%" height="420" frameborder="0" allowfullscreen></iframe>
+          </div>
+
+          <p style="margin-top:10px;"><a class="link-ghost" href="https://docs.google.com/presentation/d/1N-PgkEUXJUy144aJyUKWnXjBmIU0kSdypMWbHpo5qxE/edit?usp=sharing" target="_blank" rel="noopener">Open Presentation (Google Slides)</a></p>
+          <p><a class="link-ghost" href="https://docs.google.com/document/d/1c7qoHJpPV5zeJnqFh9gyebTEub26KgoznufbcCczLsg/edit?usp=sharing" target="_blank" rel="noopener">Process Documentation (Google Doc)</a></p>
+        </div>
+
+        <div class="project-item">
+          <h3>Other Work & Upcoming Projects</h3>
+          <p>Inventory optimization at Trinity Health, pricing research projects, and ongoing data experiments in R and SQL — more to come.</p>
+        </div>
+      </div>
+    </main>
+
+    <div class="footer">
+      <p>© 2025 Haochen (Eric) Zhou</p>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
 

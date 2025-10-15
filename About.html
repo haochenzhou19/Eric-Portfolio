@@ -1,34 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me - Haochen Zhou</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Haochen (Eric) Zhou</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav>
-    <button class="menu-toggle">☰</button>
-    <a href="index.html">Home</a>
-    <a href="About.html">About Me</a>
-    <a href="Projects.html">Projects</a>
-    <a href="Contact.html">Contact</a>
-  </nav>
+  <div class="container">
+    <header class="header">
+      <a class="brand" href="index.html">
+        <div class="logo">EZ</div>
+        <div>
+          <div style="font-weight:700;">Haochen (Eric) Zhou</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:4px;">Data-driven operations & analytics</div>
+        </div>
+      </a>
 
-  <main>
-    <h1>About Me</h1>
-    <p>I’m an Economics graduate with a passion for <strong>data-driven decision-making</strong> and <strong>process improvement</strong>. Currently, I work as a Supply Chain Specialist at Trinity Health, where I help manage and forecast medical inventory across hospital departments.</p>
-    <p>My background in economics and history trained me to interpret data, evaluate trade-offs, and communicate clearly — skills that translate naturally to improving operational efficiency.</p>
-    <p>I’m driven by continuous learning and aim to bridge operational expertise with analytical insight to drive smarter, sustainable business decisions.</p>
-    <p>For a full list of my certifications and professional experience, please see my resume.</p>
-    <a href="Resume.pdf" download class="btn">📄 Download My Resume</a>
-  </main>
+      <button class="hamburger" aria-label="Toggle navigation">☰</button>
 
-  <footer>
-    <p>© 2025 Haochen Zhou</p>
-  </footer>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Projects.html">Projects</a>
+        <a href="Contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="card">
+      <h1>About Me</h1>
+      <p class="kicker">Supply Chain Specialist • Analytics Enthusiast</p>
+
+      <p>I’m an Economics graduate with a passion for <strong>data-driven decision-making</strong> and <strong>process improvement</strong>. At Trinity Health I manage and forecast medical inventory across hospital departments — a role that surfaces daily operational complexity, from miscommunication between teams to inefficient inventory setups and avoidable waste. These challenges fuel my interest in using analytics to uncover patterns and improve processes.</p>
+
+      <p>My academic and professional background taught me to combine analytical rigor with clear communication — interpreting trade-offs, building robust workflows, and presenting insights that teams can act on.</p>
+
+      <p>For a full list of my certifications and experience, view my resume below.</p>
+      <a href="Resume.pdf" download class="btn">📄 Download Resume</a>
+    </main>
+
+    <div class="footer">
+      <p>© 2025 Haochen (Eric) Zhou</p>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
 
