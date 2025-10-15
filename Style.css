@@ -1,7 +1,6 @@
 /* ------------------------------
    Global Styles
 ------------------------------ */
-
 :root {
   /* Light mode palette */
   --bg-color: #f8f9fc;
@@ -19,16 +18,37 @@
   --card-dark: #24262a;
   --shadow-dark: rgba(0, 0, 0, 0.6);
 
+  /* Active variables (defaults to light mode) */
+  --current-bg: var(--bg-color);
+  --current-text: var(--text-color);
+  --current-primary: var(--primary-color);
+  --current-card: var(--card-bg);
+  --current-shadow: var(--shadow-color);
+
   /* Transitions */
   --transition-speed: 0.3s;
 }
 
+/* ------------------------------
+   Light / Dark Variable Switching
+------------------------------ */
+body.dark {
+  --current-bg: var(--bg-dark);
+  --current-text: var(--text-dark);
+  --current-primary: var(--primary-dark);
+  --current-card: var(--card-dark);
+  --current-shadow: var(--shadow-dark);
+}
+
+/* ------------------------------
+   Base Styles
+------------------------------ */
 body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", "Segoe UI", Arial, sans-serif;
-  background: var(--bg-color);
-  color: var(--text-color);
+  background: var(--current-bg);
+  color: var(--current-text);
   transition: background var(--transition-speed), color var(--transition-speed);
   line-height: 1.7;
 }
@@ -37,11 +57,11 @@ body {
    Header & Navigation
 ------------------------------ */
 header {
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(135deg, var(--current-primary), var(--accent-color));
   color: white;
   text-align: center;
   padding: 20px 0 30px 0;
-  box-shadow: 0 4px 10px var(--shadow-color);
+  box-shadow: 0 4px 10px var(--current-shadow);
   position: relative;
 }
 
@@ -120,7 +140,7 @@ main {
 }
 
 .intro h2 {
-  color: var(--primary-color);
+  color: var(--current-primary);
   font-size: 1.8rem;
   margin-bottom: 10px;
 }
@@ -134,21 +154,21 @@ main {
    Project Cards
 ------------------------------ */
 .project {
-  background: var(--card-bg);
+  background: var(--current-card);
   border-radius: 15px;
   padding: 30px;
   margin-bottom: 40px;
-  box-shadow: 0 4px 10px var(--shadow-color);
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  box-shadow: 0 4px 10px var(--current-shadow);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed), background var(--transition-speed);
 }
 
 .project:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 18px var(--shadow-color);
+  box-shadow: 0 8px 18px var(--current-shadow);
 }
 
 .project h3 {
-  color: var(--primary-color);
+  color: var(--current-primary);
   margin-top: 0;
 }
 
@@ -158,7 +178,7 @@ main {
 }
 
 .project a {
-  color: var(--primary-color);
+  color: var(--current-primary);
   font-weight: 600;
   text-decoration: none;
   transition: color var(--transition-speed);
@@ -183,8 +203,8 @@ iframe {
   text-align: center;
   padding: 30px;
   border-radius: 12px;
-  background: var(--card-bg);
-  box-shadow: 0 3px 8px var(--shadow-color);
+  background: var(--current-card);
+  box-shadow: 0 3px 8px var(--current-shadow);
   font-style: italic;
   color: #555;
 }
@@ -198,42 +218,6 @@ footer {
   color: #777;
   font-size: 0.9rem;
   border-top: 1px solid #ccc;
-}
-
-/* ------------------------------
-   Dark Mode
------------------------------- */
-body.dark {
-  background: var(--bg-dark);
-  color: var(--text-dark);
-}
-
-body.dark header {
-  background: linear-gradient(135deg, #222831, #30475e);
-}
-
-body.dark nav a::after {
-  background: var(--primary-dark);
-}
-
-body.dark .project,
-body.dark .coming-soon {
-  background: var(--card-dark);
-  box-shadow: 0 4px 10px var(--shadow-dark);
-}
-
-body.dark h2,
-body.dark h3 {
-  color: var(--primary-dark);
-}
-
-body.dark a {
-  color: var(--primary-dark);
-}
-
-body.dark footer {
-  color: #bbb;
-  border-top-color: #444;
 }
 
 /* ------------------------------
