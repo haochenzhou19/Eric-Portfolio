@@ -1,20 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const toggleBtn = document.getElementById("theme-toggle");
+  const toggleButton = document.getElementById("theme-toggle");
   const body = document.body;
 
-  // Check saved theme preference
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
-    body.classList.add("dark");
-    toggleBtn.textContent = "☀️"; // show sun if currently dark
+  // Load saved theme from localStorage
+  const currentTheme = localStorage.getItem("theme") || "light";
+  if (currentTheme === "dark") {
+    body.classList.add("dark-mode");
+    toggleButton.textContent = "☀️";
   } else {
-    toggleBtn.textContent = "🌙"; // show moon if light
+    toggleButton.textContent = "🌙";
   }
 
-  // Add click event to toggle button
-  toggleBtn.addEventListener("click", () => {
-    const isDark = body.classList.toggle("dark");
-    toggleBtn.textContent = isDark ? "☀️" : "🌙";
+  // Toggle theme on button click
+  toggleButton.addEventListener("click", () => {
+    const isDark = body.classList.toggle("dark-mode");
+    toggleButton.textContent = isDark ? "☀️" : "🌙";
     localStorage.setItem("theme", isDark ? "dark" : "light");
   });
 });
