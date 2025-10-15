@@ -1,32 +1,152 @@
-/* Light mode defaults */
+/* ------------------------------
+   Global Styles
+------------------------------ */
+
+:root {
+  /* Light mode palette */
+  --bg-color: #f8f9fc;
+  --text-color: #333;
+  --primary-color: #0056b3;
+  --secondary-color: #ffffff;
+  --accent-color: #008cff;
+  --card-bg: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+
+  /* Dark mode palette */
+  --bg-dark: #1a1c1f;
+  --text-dark: #e4e6eb;
+  --primary-dark: #4da3ff;
+  --card-dark: #24262a;
+  --shadow-dark: rgba(0, 0, 0, 0.6);
+
+  /* Transitions */
+  --transition-speed: 0.3s;
+}
+
 body {
-  background-color: #ffffff;
-  color: #000000;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background var(--transition-speed), color var(--transition-speed);
+  line-height: 1.7;
 }
 
-/* Dark mode overrides */
-body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
+/* ------------------------------
+   Header & Navigation
+------------------------------ */
+header {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  text-align: center;
+  padding: 20px 0 30px 0;
+  box-shadow: 0 4px 10px var(--shadow-color);
+  position: relative;
 }
 
-body.dark-mode header,
-body.dark-mode footer {
-  background-color: #1e1e1e;
-  color: #ffffff;
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  font-weight: 600;
 }
 
-body.dark-mode nav a {
-  color: #9cdcfb;
+nav {
+  margin-top: 15px;
 }
 
-body.dark-mode nav a.active {
-  border-bottom: 2px solid #9cdcfb;
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  margin: 0 15px;
+  font-size: 1rem;
+  position: relative;
+  transition: color var(--transition-speed);
 }
 
-body.dark-mode .card,
-body.dark-mode section {
-  background-color: #222;
-  color: #fff;
+nav a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: white;
+  transition: width var(--transition-speed);
+  margin: 0 auto;
 }
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: #e6e6e6;
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: background var(--transition-speed);
+}
+
+#theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ------------------------------
+   Main Content
+------------------------------ */
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.intro h2 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.intro .subtitle {
+  color: #666;
+  font-style: italic;
+}
+
+/* ------------------------------
+   Project Cards
+------------------------------ */
+.project {
+  background: var(--card-bg);
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 10px var(--shadow-color);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed), background var(--transition-speed), color var(--transition-speed);
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px var(--shadow-color);
+}
+
+.project h3 {
+  color: var(--primary-color);
+  margin-top: 0;
