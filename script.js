@@ -1,26 +1,59 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // highlight active nav link
-  const current = window.location.pathname.split("/").pop() || "index.html";
-  document.querySelectorAll(".nav a").forEach(a => {
-    if (a.getAttribute("href") === current) a.classList.add("active");
-  });
+// --------------------------
+// 🌙 Dark Mode Toggle (with Persistence)
+// --------------------------
+const themeToggle = document.getElementById("theme-toggle");
 
-  // hamburger toggle
-  const hb = document.querySelector(".hamburger");
-  const nav = document.querySelector(".nav");
-  if (hb && nav) {
-    hb.addEventListener("click", () => nav.classList.toggle("show"));
+if (themeToggle) {
+  // Restore user's theme preference
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    themeToggle.textContent = "☀️";
   }
 
-  // simple intersection observer for fade-up elements
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add("in-view");
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.15 });
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.contains("dark-mode");
+    themeToggle.textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  });
+}
 
-  document.querySelectorAll(".fade-up").forEach(el => io.observe(el));
+// --------------------------
+// 📱 Mobile Navigation Toggle (fixed selector)
+// --------------------------
+const nav = document.querySelector("nav");
+const header = document.querySelector("header");
+
+if (header && nav) {
+  const menuButton = document.createElement("button");
+  menuButton.textContent = "☰";
+  menuButton.id = "menu-toggle";
+  menuButton.setAttribute("aria-label", "Toggle navigation menu");
+  header.insertBefore(menuButton, nav);
+
+  menuButton.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+}
+
+// --------------------------
+// ✨ Scroll Fade-In Animation
+// --------------------------
+const faders = document.querySelectorAll(".fade-in, .fade-up");
+
+const appearOptions = {
+  threshold: 0.2,
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add("visible");
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
 });
