@@ -1,22 +1,27 @@
 // --------------------------
-// 🌙 Dark Mode Toggle (with Persistence)
+// 🌙 Dark Mode Toggle (Fixed + Persistent)
 // --------------------------
-const themeToggle = document.getElementById("theme-toggle");
+const toggleButton = document.getElementById("theme-toggle");
+const body = document.body;
 
-if (themeToggle) {
-  // Restore user's theme preference
-  if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-mode");
-    themeToggle.textContent = "☀️";
-  }
-
-  themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    const isDark = document.body.classList.contains("dark-mode");
-    themeToggle.textContent = isDark ? "☀️" : "🌙";
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-  });
+// Load previous mode
+if (localStorage.getItem("theme") === "dark") {
+  body.classList.add("dark-mode");
+  toggleButton.textContent = "☀️";
 }
+
+// Toggle theme on click
+toggleButton.addEventListener("click", () => {
+  body.classList.toggle("dark-mode");
+
+  if (body.classList.contains("dark-mode")) {
+    toggleButton.textContent = "☀️";
+    localStorage.setItem("theme", "dark");
+  } else {
+    toggleButton.textContent = "🌙";
+    localStorage.setItem("theme", "light");
+  }
+});
 
 // --------------------------
 // 📱 Mobile Navigation Toggle (fixed selector)
