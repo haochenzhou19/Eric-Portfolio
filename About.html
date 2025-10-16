@@ -3,134 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me | Haochen Zhou</title>
-  <meta name="description" content="Learn more about Haochen Zhou — economics graduate and supply chain specialist with growing expertise in data analytics.">
+  <title>About | Haochen Zhou</title>
+  <meta name="description" content="Learn more about Haochen (Eric) Zhou — Economics graduate, Supply Chain Specialist, and data analytics professional with a passion for efficiency, insight, and growth.">
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* === Smooth Scrolling === */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* === Responsive Layout === */
-    .about-section {
-      max-width: 900px;
-      margin: 4rem auto;
-      padding: 2rem;
-      line-height: 1.7;
-      font-size: 1.1rem;
-      animation: fadeIn 1.2s ease-in-out;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .intro {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.75rem 1.5rem;
-      background-color: var(--accent-color, #0077cc);
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .btn:hover {
-      background-color: #005fa3;
-      transform: translateY(-2px);
-    }
-
-    /* === Fade-in Animation === */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* === Responsive Adjustments === */
-    @media (max-width: 768px) {
-      .about-section {
-        padding: 2rem 1rem;
-        font-size: 1rem;
-      }
-
-      .section-title {
-        font-size: 1.6rem;
-      }
-
-      header h1 {
-        font-size: 1.5rem;
-      }
-
-      nav a {
-        font-size: 0.95rem;
-        padding: 0.5rem;
-      }
-    }
-  </style>
 </head>
 
 <body>
-  <header>
-    <h1>About Me</h1>
-    <nav>
+  <!-- Header -->
+  <header class="fade-up">
+    <h1>Haochen Zhou</h1>
+    <nav class="nav">
       <a href="index.html">Home</a>
-      <a href="About.html" class="active">About Me</a>
-      <a href="Projects.html">Projects</a>
-      <a href="Contact.html">Contact</a>
+      <a href="about.html" class="active">About Me</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
     </nav>
     <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    <button class="hamburger" aria-label="Toggle navigation">☰</button>
   </header>
 
+  <!-- Main Content -->
   <main>
-    <section id="about" class="section about-section">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
+    <section class="fade-up intro">
+      <h2>About Me</h2>
+      <p>
+        Hello! I’m <strong>Haochen (Eric) Zhou</strong>, an <strong>Economics graduate</strong> from <strong>Kalamazoo College</strong> with a minor in <strong>History</strong>. 
+        My background blends analytical rigor with a liberal arts foundation that emphasizes <strong>critical thinking</strong>, <strong>presentation skills</strong>, and <strong>collaborative problem-solving</strong>.
+      </p>
 
-        <p class="intro">
-          <strong>Hi, I’m Haochen (Eric) Zhou</strong><br>
-          I’m an <strong>Economics graduate</strong> and <strong>Supply Chain Specialist</strong> at Trinity Health, where I coordinate and forecast medical inventory across multiple hospital departments.
-        </p>
+      <p>
+        I currently work as a <strong>Supply Chain Specialist</strong> at <strong>Trinity Health</strong>, where I manage inventory systems for multiple hospital departments, streamline workflows, and forecast supply needs using data analysis and ERP systems. 
+        This experience has strengthened my ability to operate efficiently in fast-paced, data-driven environments.
+      </p>
 
-        <p>
-          My work centers on improving operational efficiency in healthcare — streamlining inventory visibility, minimizing waste, and supporting patient care through reliable supply flow.
-        </p>
+      <p>
+        My academic and professional experiences have helped me develop a strong understanding of <strong>data analytics</strong>, <strong>economic research</strong>, and <strong>process optimization</strong> — all guided by a curiosity for how thoughtful systems design can drive meaningful results.
+      </p>
+    </section>
 
-        <p>
-          While my current role isn’t purely analytical, I’ve recently completed the 
-          <strong>Google Data Analytics Certificate</strong>, which strengthened my ability to draw insights from data and apply them to real-world decision-making.
-        </p>
+    <section class="fade-up">
+      <h2>Education</h2>
+      <ul class="skills-list">
+        <li><strong>Bachelor of Arts in Economics</strong> — Kalamazoo College (Minor: History)</li>
+        <li>Dean’s List, Fall 2023 & Winter 2024</li>
+        <li>Relevant Coursework: Health Economics, Accounting, Data Analysis</li>
+      </ul>
+    </section>
 
-        <p>
-          My economics background sharpened my understanding of trade-offs and data interpretation, while my history minor built my communication and critical thinking skills. 
-          I aspire to combine these strengths to bring data-driven improvements to business and supply chain operations.
-        </p>
+    <section class="fade-up">
+      <h2>Professional Strengths</h2>
+      <ul class="skills-list">
+        <li>Supply Chain & Operations Management</li>
+        <li>Data Analytics (Excel, R, SQL)</li>
+        <li>Economic & Statistical Research</li>
+        <li>Cross-Functional Communication</li>
+        <li>Process Improvement & Forecasting</li>
+      </ul>
+    </section>
 
-        <a href="Resume.pdf" class="btn" download>📄 Download My Resume</a>
-      </div>
+    <section class="fade-up">
+      <h2>Beyond Work</h2>
+      <p>
+        I’m deeply interested in sustainability, history, and the intersection of business and technology. 
+        At Kalamazoo College, I presented in forums on the <strong>economics of climate change</strong> and helped implement <strong>environmentally friendly business solutions</strong> across campus.
+      </p>
+      <p>
+        Outside of work, I enjoy researching market trends, exploring efficient systems design, and continuously learning to refine my data and operations skill set.
+      </p>
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Haochen Zhou</p>
+  <!-- Footer -->
+  <footer class="fade-up">
+    <p>© 2025 Haochen Zhou | Built with passion & precision</p>
   </footer>
 
-  <script src="theme-toggle.js"></script>
+  <!-- Scripts -->
+  <script src="script.js"></script>
 </body>
 </html>

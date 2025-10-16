@@ -4,78 +4,75 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Haochen Zhou</title>
-  <meta name="description" content="Explore data analytics and supply chain projects by Haochen Zhou.">
+  <meta name="description" content="Explore data analytics and supply chain projects by Haochen Zhou." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Projects</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="About.html">About Me</a>
-      <a href="Projects.html" class="active">Projects</a>
-      <a href="Contact.html">Contact</a>
-    </nav>
-    <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+  <header class="fade-up">
+    <div class="container">
+      <h1 class="logo">Haochen Zhou</h1>
+      <button class="hamburger" aria-label="Toggle navigation">☰</button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="intro">
+    <section class="intro fade-up">
       <h2>My Projects</h2>
       <p class="subtitle">Turning data into insights and operational impact</p>
     </section>
 
-    <section class="project">
+    <section class="project fade-up">
       <h3>Cyclistic Bike-Share Analysis</h3>
       <p><em>Google Data Analytics Capstone Project</em></p>
       <p>
         This project analyzed Chicago’s bike-share usage data to uncover key patterns between casual and annual riders, providing data-driven recommendations for improving membership conversion.
       </p>
-
-      <h4>Key Contributions</h4>
       <ul>
         <li>Processed and cleaned 12 months of trip data using Excel and SQL</li>
         <li>Analyzed ride duration, usage trends, and behavioral patterns with R</li>
-        <li>Built visualizations to communicate actionable business insights</li>
+        <li>Built visualizations to communicate actionable insights</li>
         <li>Developed strategy suggestions to increase annual memberships</li>
       </ul>
 
-      <iframe 
-        src="https://docs.google.com/presentation/d/1N-PgkEUXJUy144aJyUKWnXjBmIU0kSdypMWbHpo5qxE/embed?start=false&loop=false"
-        width="700" height="400" allowfullscreen>
-      </iframe>
+      <div class="project-embed">
+        <iframe 
+          src="https://docs.google.com/presentation/d/1N-PgkEUXJUy144aJyUKWnXjBmIU0kSdypMWbHpo5qxE/embed?start=false&loop=false"
+          width="700" height="400" allowfullscreen>
+        </iframe>
+        <p>
+          <a href="https://docs.google.com/presentation/d/1N-PgkEUXJUy144aJyUKWnXjBmIU0kSdypMWbHpo5qxE/edit?usp=sharing" target="_blank" rel="noopener noreferrer">🔗 View Full Presentation</a>
+        </p>
+      </div>
 
-      <p>
-        <a href="https://docs.google.com/presentation/d/1N-PgkEUXJUy144aJyUKWnXjBmIU0kSdypMWbHpo5qxE/edit?usp=sharing" target="_blank" rel="noopener">
-          🔗 View Full Presentation
-        </a>
-      </p>
-
-      <iframe 
-        src="https://docs.google.com/document/d/1c7qoHJpPV5zeJnqFh9gyebTEub26KgoznufbcCczLsg/preview"
-        width="700" height="500">
-      </iframe>
-
-      <p>
-        <a href="https://docs.google.com/document/d/1c7qoHJpPV5zeJnqFh9gyebTEub26KgoznufbcCczLsg/edit?usp=sharing" target="_blank" rel="noopener">
-          📘 View Full Documentation
-        </a>
-      </p>
+      <div class="project-embed">
+        <iframe 
+          src="https://docs.google.com/document/d/1c7qoHJpPV5zeJnqFh9gyebTEub26KgoznufbcCczLsg/preview"
+          width="700" height="500">
+        </iframe>
+        <p>
+          <a href="https://docs.google.com/document/d/1c7qoHJpPV5zeJnqFh9gyebTEub26KgoznufbcCczLsg/edit?usp=sharing" target="_blank" rel="noopener noreferrer">📘 View Full Documentation</a>
+        </p>
+      </div>
     </section>
 
-    <section class="coming-soon">
+    <section class="coming-soon fade-up">
       <h3>More Projects Coming Soon</h3>
       <p>
-        Future work will include advanced applications of R, SQL, and Excel for solving supply chain and business analytics challenges. Shortcomings per project will be reflected upon and improved on every project.
+        Future work will include advanced R, SQL, and Excel applications for solving supply chain and business analytics challenges.
       </p>
     </section>
   </main>
 
-  <footer>
+  <footer class="fade-up">
     <p>© 2025 Haochen Zhou</p>
   </footer>
 
-  <script src="theme-toggle.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-

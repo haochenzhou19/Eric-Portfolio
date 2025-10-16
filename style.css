@@ -4,6 +4,7 @@
 html {
   scroll-behavior: smooth;
 }
+
 :root {
   /* Light mode palette */
   --bg-color: #f8f9fc;
@@ -133,7 +134,7 @@ main {
 }
 
 /* ------------------------------
-   Project Cards
+   Project Section
 ------------------------------ */
 .project {
   background: var(--card-bg);
@@ -141,7 +142,8 @@ main {
   padding: 30px;
   margin-bottom: 40px;
   box-shadow: 0 4px 10px var(--shadow-color);
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed), background var(--transition-speed), color var(--transition-speed);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed),
+    background var(--transition-speed), color var(--transition-speed);
 }
 
 .project:hover {
@@ -189,6 +191,21 @@ iframe {
   box-shadow: 0 3px 8px var(--shadow-color);
   font-style: italic;
   color: #555;
+}
+
+/* ------------------------------
+   Fade-in Scroll Animation
+------------------------------ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ------------------------------
@@ -260,9 +277,7 @@ body.dark-mode footer {
     height: 35px;
     font-size: 1rem;
   }
-}
-/* Responsive Design */
-@media (max-width: 768px) {
+
   header {
     flex-direction: column;
     align-items: center;
@@ -283,7 +298,9 @@ body.dark-mode footer {
     width: 100%;
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     text-align: center;
   }
 

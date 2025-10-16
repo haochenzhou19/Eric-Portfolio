@@ -4,12 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Haochen Zhou</title>
-  <meta name="description" content="Contact Haochen Zhou — connect via email, GitHub, or phone.">
+  <meta name="description" content="Get in touch with Haochen (Eric) Zhou — connect via email, GitHub, or phone for collaboration and opportunities.">
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <header>
-    <h1>Contact</h1>
+  <!-- Header -->
+  <header class="fade-in">
+    <h1>Haochen Zhou</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="About.html">About Me</a>
@@ -19,22 +21,53 @@
     <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
   </header>
 
+  <!-- Main Content -->
   <main>
-    <section class="project">
-      <h2>Get in Touch</h2>
+    <section class="fade-in intro">
+      <h2>Contact Me</h2>
       <p>
-        I’m always open to connecting about data analytics, supply chain optimization, or collaboration opportunities.
+        I’m always open to connecting about <strong>data analytics</strong>, 
+        <strong>supply chain optimization</strong>, or <strong>collaboration opportunities</strong>.
       </p>
+      <p>
+        Use the form below or reach out directly via email or GitHub. I’ll get back to you as soon as possible.
+      </p>
+    </section>
+
+    <section class="fade-in contact-section">
+      <h2>Send a Message</h2>
+      <form action="https://formspree.io/f/xjkajpyv" method="POST" class="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="_replyto" placeholder="you@example.com" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+
+    <section class="fade-in contact-info">
+      <h2>Other Ways to Connect</h2>
       <p><strong>Email:</strong> <a href="mailto:haochen.zhou19@gmail.com">haochen.zhou19@gmail.com</a></p>
       <p><strong>Phone:</strong> (734) 302-7011</p>
-      <p><strong>GitHub:</strong> <a href="https://github.com/haochenzhou19/Eric-Portfolio" target="_blank">github.com/haochenzhou19/Eric-Portfolio</a></p>
+      <p><strong>GitHub:</strong> 
+        <a href="https://github.com/haochenzhou19/Eric-Portfolio" target="_blank" rel="noopener noreferrer">
+          github.com/haochenzhou19/Eric-Portfolio
+        </a>
+      </p>
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Haochen Zhou</p>
+  <!-- Footer -->
+  <footer class="fade-in">
+    <p>© 2025 Haochen Zhou | Built with clarity and precision</p>
   </footer>
 
   <script src="theme-toggle.js"></script>
+  <script src="scroll-animations.js"></script>
 </body>
 </html>
