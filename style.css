@@ -6,7 +6,6 @@ html {
 }
 
 :root {
-  /* Light mode palette */
   --bg-color: #f8f9fc;
   --text-color: #333;
   --primary-color: #0056b3;
@@ -15,18 +14,15 @@ html {
   --card-bg: #ffffff;
   --shadow-color: rgba(0, 0, 0, 0.1);
 
-  /* Dark mode palette */
   --bg-dark: #1a1c1f;
   --text-dark: #e4e6eb;
   --primary-dark: #4da3ff;
   --card-dark: #24262a;
   --shadow-dark: rgba(0, 0, 0, 0.6);
 
-  /* Header gradients */
   --header-gradient: linear-gradient(135deg, var(--primary-color), var(--accent-color));
   --header-gradient-dark: linear-gradient(135deg, #222831, #30475e);
 
-  /* Transitions */
   --transition-speed: 0.3s;
 }
 
@@ -92,7 +88,6 @@ nav a:hover {
   color: #e6e6e6;
 }
 
-/* Theme toggle button */
 #theme-toggle {
   position: absolute;
   right: 20px;
@@ -132,84 +127,37 @@ main {
   margin-bottom: 10px;
 }
 
-.intro .subtitle {
-  color: #666;
-  font-style: italic;
-}
-
 /* ------------------------------
-   Project Section
+   Resume Download Button
 ------------------------------ */
-.project {
-  background: var(--card-bg);
-  border-radius: 15px;
-  padding: 30px;
-  margin-bottom: 40px;
-  box-shadow: 0 4px 10px var(--shadow-color);
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed),
-    background var(--transition-speed), color var(--transition-speed);
-}
-
-.project:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px var(--shadow-color);
-}
-
-.project h3 {
-  color: var(--primary-color);
-  margin-top: 0;
-}
-
-.project p,
-.project li {
-  font-size: 1rem;
-}
-
-.project a {
-  color: var(--primary-color);
-  font-weight: 600;
-  text-decoration: none;
-  transition: color var(--transition-speed);
-}
-
-.project a:hover {
-  color: var(--accent-color);
-  text-decoration: underline;
-}
-
-iframe {
-  border: none;
-  border-radius: 8px;
-  margin: 20px 0;
-  width: 100%;
-}
-
-/* ------------------------------
-   Coming Soon
------------------------------- */
-.coming-soon {
+.resume-download {
   text-align: center;
-  padding: 30px;
-  border-radius: 12px;
-  background: var(--card-bg);
-  box-shadow: 0 3px 8px var(--shadow-color);
-  font-style: italic;
-  color: #555;
+  margin: 30px 0;
 }
 
-/* ------------------------------
-   Fade-in Scroll Animation
------------------------------- */
-.fade-in {
-  opacity: 0;
-  transform: translateY(25px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  will-change: opacity, transform;
+.btn {
+  background: var(--primary-color);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background var(--transition-speed), transform var(--transition-speed);
+  display: inline-block;
 }
 
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
+.btn:hover {
+  background: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+body.dark-mode .btn {
+  background: var(--primary-dark);
+  color: #fff;
+}
+
+body.dark-mode .btn:hover {
+  background: #5eb8ff;
 }
 
 /* ------------------------------
@@ -227,42 +175,12 @@ footer {
    Dark Mode
 ------------------------------ */
 body.dark-mode {
-  /* Override base color variables */
   --bg-color: var(--bg-dark);
   --text-color: var(--text-dark);
   --primary-color: var(--primary-dark);
   --card-bg: var(--card-dark);
   --shadow-color: var(--shadow-dark);
   --header-gradient: var(--header-gradient-dark);
-}
-
-body.dark-mode {
-  background: var(--bg-dark);
-  color: var(--text-dark);
-}
-
-body.dark-mode nav a::after {
-  background: var(--primary-dark);
-}
-
-body.dark-mode .project,
-body.dark-mode .coming-soon {
-  background: var(--card-dark);
-  box-shadow: 0 4px 10px var(--shadow-dark);
-}
-
-body.dark-mode h2,
-body.dark-mode h3 {
-  color: var(--primary-dark);
-}
-
-body.dark-mode a {
-  color: var(--primary-dark);
-}
-
-body.dark-mode footer {
-  color: #bbb;
-  border-top-color: #444;
 }
 
 /* ------------------------------
@@ -276,6 +194,7 @@ body.dark-mode footer {
 
   main {
     margin: 20px auto;
+    padding: 1rem;
   }
 
   header h1 {
@@ -288,29 +207,7 @@ body.dark-mode footer {
     font-size: 1rem;
   }
 
-  header {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  main {
-    padding: 1rem;
-  }
-
-  section {
-    width: 100%;
-  }
-
-  h1,
-  h2,
-  h3 {
+  h1, h2, h3 {
     text-align: center;
   }
 
@@ -318,38 +215,4 @@ body.dark-mode footer {
     display: block;
     margin: 1rem auto;
   }
-}
-/* ==========================
-   DARK MODE
-========================== */
-body.dark-mode {
-  background-color: #121212;
-  color: #f0f0f0;
-}
-
-body.dark-mode header,
-body.dark-mode footer {
-  background-color: #1e1e1e;
-  color: #f0f0f0;
-}
-
-body.dark-mode a {
-  color: #66aaff;
-}
-
-body.dark-mode .btn {
-  background-color: #333;
-  color: #fff;
-}
-
-body.dark-mode .btn.secondary {
-  background-color: #555;
-}
-
-#theme-toggle {
-  background: none;
-  border: none;
-  font-size: 1.5em;
-  cursor: pointer;
-  margin-left: 10px;
 }
